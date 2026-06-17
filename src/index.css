@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 165 80% 48%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 20% 80%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 12% 55%;
+
+    --accent: 260 60% 60%;
+    --accent-foreground: 210 20% 92%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 165 80% 48%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(165 80% 48%), hsl(200 80% 55%));
+    --gradient-accent: linear-gradient(135deg, hsl(260 60% 60%), hsl(300 60% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(165 80% 48% / 0.15), hsl(260 60% 60% / 0.1));
+    --glass-bg: hsl(220 18% 10% / 0.7);
+    --glass-border: hsl(220 14% 24% / 0.5);
+    --shadow-glow: 0 0 30px hsl(165 80% 48% / 0.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+  .gradient-accent-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+  .gradient-btn {
+    background-image: var(--gradient-primary);
+    @apply text-primary-foreground font-semibold;
+  }
+  .section-padding {
+    @apply py-20 md:py-28 px-4 md:px-8;
+  }
+  .glow-border {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(220 20% 6%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(220 14% 24%);
+  border-radius: 3px;
+}
+
+/* Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background-image: var(--gradient-primary);
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+html {
+  scroll-behavior: smooth;
+}
