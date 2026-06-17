@@ -49,7 +49,7 @@ const Navbar = () => {
           ))}
           <li>
             <a
-              href="/Anas_Inamdar_Resume.pdf"
+              href="/Anas.Resume.pdf"
               download
               className="gradient-btn px-4 py-2 rounded-lg text-sm"
             >
@@ -90,7 +90,7 @@ const Navbar = () => {
               ))}
               <li>
                 <a
-                  href="/Anas_Inamdar_Resume.pdf"
+                  href="/Anas.Resume.pdf"
                   download
                   className="gradient-btn px-4 py-2 rounded-lg text-sm inline-block"
                 >

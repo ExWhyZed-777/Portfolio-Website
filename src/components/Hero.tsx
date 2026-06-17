@@ -73,7 +73,7 @@ const Hero = () => {
             View Projects
           </a>
           <a
-            href="/Anas_Inamdar_Resume.pdf"
+            href="/Anas.Resume.pdf"
             download
             className="glass-card px-6 py-3 rounded-lg text-sm font-semibold text-foreground hover:border-primary/50 transition-colors flex items-center gap-2"
           >
